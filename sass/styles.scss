@@ -6,8 +6,8 @@ body {
   background-color: $bv;
   color: whitesmoke;
   h1 {
-  	color: darken(whitesmoke, 10%);
-  	text-shadow: 1px 2px 3px rgba(0,0,0,0.75);
+	color: darken(whitesmoke, 10%);
+	text-shadow: 1px 2px 3px rgba(0,0,0,0.75);
   }
 
   padding: 60px 0; 
@@ -18,23 +18,29 @@ input::-moz-focus-inner {
 }
 
 a.navbar-brand, {
+	transition: color 0.3s ease;
 	color: lighten($bv, 15%)!important;
+
+	&:hover {
+		color: $bv!important;
+	}
 }
 
 a {
-  color: $link;
-  outline: 0;
-  outline: none!important;
+	color: $link;
+	outline: 0;
+	outline: none!important;
+	transition: color 0.3s ease;
 
-  &:hover {
-  	color: darken($link, 10%);
-  }   
-  &:active {
-  	color: darken($link, 15%);
-  }
-  &:visited {
-  	color: $link;
-  }  
+	&:hover {
+	color: darken($link, 10%);
+	}   
+	&:active {
+	color: darken($link, 15%);
+	}
+	&:visited {
+	color: $link;
+	}  
 }
 
 footer {
