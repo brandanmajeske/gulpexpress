@@ -11,7 +11,7 @@ var sass = require('gulp-ruby-sass');
 var _if = require('gulp-if');
 var isWindows = /^win/.test(require('os').platform());
 var lr;
-var EXPRESS_PORT = 3000;
+var EXPRESS_PORT = 8080;
 var EXPRESS_ROOT = __dirname;
 var LIVERELOAD_PORT = 35729;
 
@@ -60,7 +60,9 @@ function startExpress(){
 
 	// Routes
 	app.get('/', routes.index);
-	app.get('/helloworld', routes.helloworld);
+	app.get('/home', routes.home);
+	app.get('/about', routes.about);
+	app.get('/contact', routes.contact);
 
 	
 	// Start Server 
@@ -117,7 +119,7 @@ gulp.task('default', function(){
 
 	gulp.watch('public/stylesheets/*.css', notifyLiveReload);
 	
-	gulp.watch('views/*.jade', notifyLiveReload);
+	gulp.watch('views/**/*.jade', notifyLiveReload);
 	
 	gulp.watch('public/javascripts/*.js', notifyLiveReload);
 	
